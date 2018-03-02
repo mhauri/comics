@@ -23,7 +23,7 @@ try {
 
 
 $commandClasses = [
-    \Comics\Commands\PushCommand::class,
+    \Comics\Commands\SendComicCommand::class,
 ];
 $statusCode = \Robo\Robo::run(
     $_SERVER['argv'],

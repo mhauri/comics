@@ -7,3 +7,4 @@ pub/index.html
 pub/packages.json
 queue/*
 !queue/.gitkeep
+.idea
