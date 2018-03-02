@@ -1,0 +1,20 @@
+{
+    "name": "mhauri/comics-to-webhooks",
+    "description": "Comics to Webhooks like Slack and HipChat",
+    "authors": [
+        {
+            "name": "Marcel Hauri",
+            "email": "marcel@hauri.me"
+        }
+    ],
+    "require": {
+        "consolidation/robo": "^1.2",
+        "symfony/dotenv": "^3.4",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload":{
+        "psr-4":{
+            "Comics\\":"src"
+        }
+    }
+}

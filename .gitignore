@@ -1,0 +1,9 @@
+.env
+vendor
+satis.json
+satis.log
+pub/include
+pub/index.html
+pub/packages.json
+queue/*
+!queue/.gitkeep
