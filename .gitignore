@@ -8,3 +8,4 @@ pub/packages.json
 queue/*
 !queue/.gitkeep
 .idea
+lock/*.lock

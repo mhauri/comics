@@ -14,10 +14,11 @@ class Slack extends AbstractClient
         if($name && $image && $channel) {
             $payload = [
                 'username' => $name,
-                'text' => $image,
-                'mrkdwn' => 'true',
-                'mrkdwn_in' => 'text',
-                'icon_emoji' => getenv('SLACK_ICON') ?? ':laughing:'
+                'icon_emoji' => getenv('SLACK_ICON') ?? ':smile:',
+                'attachments' => [[
+                    'fallback' => $name,
+                    "image_url" => $image,
+                ]],
             ];
 
             return $this->_send(getenv('SLACK_WEBHOOK_URL'), $payload);

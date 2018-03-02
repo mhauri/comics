@@ -17,11 +17,6 @@ abstract class AbstractClient implements ClientInterface
      */
     private $image = '';
 
-    /**
-     * @var string
-     */
-    private $webHookUrl = '';
-
     public function setComicName(string $name)
     {
         $this->name = $name;
@@ -47,9 +42,8 @@ abstract class AbstractClient implements ClientInterface
     protected function _send(string $uri, array $payload) : bool
     {
         $client = new Client();
-        $lockFile = new Lockfile();
 
-        if($lockFile->isLocked($this->getComicName(), $this->getComicImage())) {
+        if($this->isLocked($uri)) {
             return false;
         }
 
@@ -59,5 +53,12 @@ abstract class AbstractClient implements ClientInterface
         } catch (\Exception $e) {
             return false;
         }
+    }
+
+    private function isLocked(string $uri)
+    {
+        $lockFile = new Lockfile();
+        $lockFileIdentifier = sprintf('%s_%s', $this->getComicName(), sha1($uri));
+        return $lockFile->isLocked($lockFileIdentifier, $this->getComicImage());
     }
 }
