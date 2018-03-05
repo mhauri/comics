@@ -1,6 +1,6 @@
 # Comics
 
-Comics is a simple [robo.li](https://robo.li/) script which pushes your daily dose of commics in you Slack Channel or HipChat Room.
+Comics is a simple [robo.li](https://robo.li/) script which pushes your daily dose of commics into your Slack Channel or HipChat Room.
 
 Currently the following Comics are integrated.
 
