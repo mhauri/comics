@@ -1,5 +1,5 @@
 <?php
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Comics\Clients;
 
@@ -43,7 +43,7 @@ abstract class AbstractClient implements ClientInterface
     {
         $client = new Client();
 
-        if($this->isLocked($uri)) {
+        if ($this->isLocked($uri)) {
             return false;
         }
 

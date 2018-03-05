@@ -1,5 +1,5 @@
 <?php
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Comics\Lockfile;
 
@@ -14,7 +14,7 @@ class Lockfile
         $content = sha1($content);
         $lockFileContent = $this->getLockFileContent($name);
 
-        if($lockFileContent === $content) {
+        if ($lockFileContent === $content) {
             return true;
         }
 
@@ -25,7 +25,7 @@ class Lockfile
 
     private function getLockFileContent(string $name)
     {
-        if(realpath($this->getLockFilePath($name))) {
+        if (realpath($this->getLockFilePath($name))) {
             return file_get_contents($this->getLockFilePath($name));
         }
         return '';

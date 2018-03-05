@@ -1,5 +1,5 @@
 <?php
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Comics\Clients;
 
@@ -10,7 +10,7 @@ class HipChat extends AbstractClient
         $name = $this->getComicName();
         $image = $this->getComicImage();
 
-        if($name && $image) {
+        if ($name && $image) {
             $message = sprintf('%s<br /><a href="%s"><img src="%s"/></a>', $name, $image, $image);
             $payload = [
                 'message'=> $message,

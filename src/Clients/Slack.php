@@ -1,5 +1,5 @@
 <?php
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Comics\Clients;
 
@@ -11,7 +11,7 @@ class Slack extends AbstractClient
         $image = $this->getComicImage();
         $channel = getenv('SLACK_CHANNEL');
 
-        if($name && $image && $channel) {
+        if ($name && $image && $channel) {
             $payload = [
                 'username' => $name,
                 'icon_emoji' => getenv('SLACK_ICON') ?? ':smile:',

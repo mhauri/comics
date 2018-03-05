@@ -1,5 +1,5 @@
 <?php
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Comics\Commands;
 
@@ -15,13 +15,13 @@ class SendComicCommand extends Tasks
         $class = $this->getComicClassByName($name);
         $clients = $this->getClients();
 
-        if($class && $clients) {
+        if ($class && $clients) {
             /**
              * @var $comic \Comics\Comics\ComicsInterface
              */
             $comic = new $class();
 
-            foreach($clients as $client) {
+            foreach ($clients as $client) {
                 /**
                  * @var $client \Comics\Clients\ClientInterface
                  */
@@ -46,7 +46,7 @@ class SendComicCommand extends Tasks
     private function getClassByName(string $name, string $namespace) : string
     {
         $class = sprintf('%s\\%s', $namespace, ucfirst($name));
-        if(class_exists($class)) {
+        if (class_exists($class)) {
             return $class;
         }
         return '';
@@ -56,11 +56,11 @@ class SendComicCommand extends Tasks
     {
         $data = [];
         $clients = getenv('CLIENTS');
-        if($clients) {
+        if ($clients) {
             $clients = explode(',', $clients);
             foreach ($clients as $client) {
                 $class = $this->getClientClassByName($client);
-                if(!$class || !$this->validateClientWebHookUrl($client)) {
+                if (!$class || !$this->validateClientWebHookUrl($client)) {
                     continue;
                 }
 
