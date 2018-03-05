@@ -8,4 +8,5 @@ pub/packages.json
 queue/*
 !queue/.gitkeep
 .idea
+.php_cs.cache
 lock/*.lock
