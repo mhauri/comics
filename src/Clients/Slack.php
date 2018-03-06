@@ -12,9 +12,14 @@ class Slack extends AbstractClient
         $channel = getenv('SLACK_CHANNEL');
 
         if ($name && $image && $channel) {
+            $icon = sprintf(':%s:', strtolower($name));
+            if ((bool) getenv('SLACK_ICON')) {
+                $icon = getenv('SLACK_ICON');
+            }
+
             $payload = [
                 'username' => $name,
-                'icon_emoji' => getenv('SLACK_ICON') ?? sprintf(':%s:', strtolower($name)),
+                'icon_emoji' => $icon,
                 'attachments' => [[
                     'fallback' => $name,
                     "image_url" => $image,
