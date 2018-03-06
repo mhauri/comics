@@ -14,7 +14,7 @@ class Slack extends AbstractClient
         if ($name && $image && $channel) {
             $payload = [
                 'username' => $name,
-                'icon_emoji' => getenv('SLACK_ICON') ?? ':smile:',
+                'icon_emoji' => getenv('SLACK_ICON') ?? sprintf(':%s:', strtolower($name)),
                 'attachments' => [[
                     'fallback' => $name,
                     "image_url" => $image,
