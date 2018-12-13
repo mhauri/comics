@@ -6,7 +6,7 @@ Currently the following Comics are integrated.
 
 - [Garfield](https://garfield.com/)
 - [CommitStrip](http://www.commitstrip.com/en/)
-- [Nichtlustig](http://www.http://nichtlustig.de/)
+- [Nichtlustig](http://www.nichtlustig.de/)
 
 
 ##### Cronjob settings example
