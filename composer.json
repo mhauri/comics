@@ -10,7 +10,8 @@
     "require": {
         "consolidation/robo": "^1.2",
         "symfony/dotenv": "^3.4",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-simplexml": "*"
     },
     "autoload":{
         "psr-4":{
