@@ -3,9 +3,11 @@ declare(strict_types=1);
 
 namespace Comics\Comics;
 
+use GuzzleHttp\Client;
+
 class Xkcd implements ComicsInterface
 {
-    const COMIC_NAME = 'XKCD';
+    const COMIC_NAME = 'xkcd';
 
     const FEED_URL = 'https://xkcd.com/rss.xml';
 
@@ -22,12 +24,20 @@ class Xkcd implements ComicsInterface
      */
     public function getImage()
     {
-        $rss = simplexml_load_file(self::FEED_URL);
-        $img = $rss->channel->item->description;
+        $feed = $this->getFeed();
+        $xml = simplexml_load_string($feed);
+        $imageHtml = (string) $xml->channel->item->description;
 
         $exp = "/^.*?(https?\\:\\/\\/[^\\\" ]+)/";
-        preg_match_all($exp, $img, $url);
+        preg_match_all($exp, $imageHtml, $data);
 
-        return $url[1][0];
+        return $data[1][0];
+    }
+
+    private function getFeed()
+    {
+        $client = new Client();
+        $result = $client->get(self::FEED_URL);
+        return $result->getBody()->getContents();
     }
 }
