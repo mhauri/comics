@@ -8,6 +8,7 @@ Currently the following Comics are integrated.
 - [CommitStrip](http://www.commitstrip.com/en/)
 - [Nichtlustig](http://www.nichtlustig.de/)
 - [xkcd](https://www.xkcd.com/)
+- [Dilbert](https://www.dilbert.com/)
 
 
 ##### Cronjob settings example
@@ -15,6 +16,7 @@ Currently the following Comics are integrated.
     0 9 * * * php /path/to/your/comics send:comic nichtlustig >> /dev/null 2>&1
     0 15 * * * php /path/to/your/comics send:comic commitStrip >> /dev/null 2>&1
     30 16 * * * php /path/to/your/comics send:comic xkcd >> /dev/null 2>&1
+    30 10 * * * php /path/to/your/comics send:comic dilbert >> /dev/null 2>&1
 
 ##### Issues / Ideas
 
