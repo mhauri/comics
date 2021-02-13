@@ -10,3 +10,4 @@ queue/*
 .idea
 .php_cs.cache
 lock/*.lock
+composer.lock
