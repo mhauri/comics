@@ -10,7 +10,7 @@ class Nichtlustig implements ComicsInterface
 {
     const COMIC_NAME = 'Nichtlustig';
 
-    const FEED_URL = 'https://gist.githubusercontent.com/mhauri/a9a7efbbddf9919d85ab136526c5bd92/raw/7015f120dca9098adf42896ae2a22dde30adb624/nichtlustig.json';
+    const FEED_URL = 'https://joscha.com/rss/all';
 
     /**
      * @return string
@@ -25,14 +25,16 @@ class Nichtlustig implements ComicsInterface
      */
     public function getImage()
     {
-        $dateBack = date('ymd', strtotime('-18 years'));
         $feed = $this->getFeed();
-        $items = json_decode($feed, true);
-        if (isset($items[$dateBack])) {
-            return $items[$dateBack]['url'];
-        }
+        $xml = simplexml_load_string($feed, 'SimpleXMLElement', LIBXML_NOCDATA);
+        $array = json_decode(json_encode((array) $xml), true);
+        $dom = new \DOMDocument();
+        $dom->loadHTML($array['channel']['item'][0]['description']);
 
-        return '';
+        $xpath = new \DOMXPath($dom);
+        $src = $xpath->evaluate('string(//img/@src)');
+
+        return $src;
     }
 
     private function getFeed()
