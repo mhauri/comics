@@ -29,6 +29,6 @@ $statusCode = \Robo\Robo::run(
     $_SERVER['argv'],
     $commandClasses,
     'Comics to Webhooks',
-    '1.0.0'
+    '1.1.0'
 );
 exit($statusCode);
