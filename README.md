@@ -11,7 +11,7 @@ Currently the following Comics are integrated.
 - [Dilbert](https://www.dilbert.com/)
 
 ##### Installation
-    composer create-project  mhauri/comics-to-webhooks
+    composer create-project mhauri/comics-to-webhooks comics
 
 ##### Configuration
     cp .env.dist .env
