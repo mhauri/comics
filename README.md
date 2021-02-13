@@ -9,6 +9,7 @@ Currently the following Comics are integrated.
 - [Nichtlustig](http://www.nichtlustig.de/)
 - [xkcd](https://www.xkcd.com/)
 - [Dilbert](https://www.dilbert.com/)
+- [Unnützes Wissen](https://www.xn--unntzes-wissen-isb.de/)
 
 ##### Installation
     composer create-project mhauri/comics-to-webhooks comics
@@ -25,6 +26,7 @@ Configure your Slack / HipChat Webhook Url's in the **.env** file.
     0 15 * * * php /path/to/your/comics send:comic commitStrip >> /dev/null 2>&1
     30 16 * * * php /path/to/your/comics send:comic xkcd >> /dev/null 2>&1
     30 10 * * * php /path/to/your/comics send:comic dilbert >> /dev/null 2>&1
+    30 11 * * * php /path/to/your/comics send:comic unnuetz >> /dev/null 2>&1
 
 ##### Issues / Ideas
 
