@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Comics\Lockfile;
@@ -28,6 +29,7 @@ class Lockfile
         if (realpath($this->getLockFilePath($name))) {
             return file_get_contents($this->getLockFilePath($name));
         }
+
         return '';
     }
 

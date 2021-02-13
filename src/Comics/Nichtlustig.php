@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Comics\Comics;
@@ -30,6 +31,7 @@ class Nichtlustig implements ComicsInterface
         if (isset($items[$dateBack])) {
             return $items[$dateBack]['url'];
         }
+
         return '';
     }
 
@@ -37,6 +39,7 @@ class Nichtlustig implements ComicsInterface
     {
         $client = new Client();
         $result = $client->get(self::FEED_URL);
+
         return $result->getBody()->getContents();
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Comics\Comics;
@@ -30,6 +31,7 @@ class CommitStrip implements ComicsInterface
         $doc = new \DOMDocument();
         $doc->loadHTML($imageHtml);
         $imageTags = $doc->getElementsByTagName('img');
+
         return (string) $imageTags->item(0)->getAttribute('src') ?? '';
     }
 
@@ -37,6 +39,7 @@ class CommitStrip implements ComicsInterface
     {
         $client = new Client();
         $result = $client->get(self::FEED_URL);
+
         return $result->getBody()->getContents();
     }
 }

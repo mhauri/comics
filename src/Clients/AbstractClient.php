@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Comics\Clients;
@@ -20,6 +21,7 @@ abstract class AbstractClient implements ClientInterface
     public function setComicName(string $name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -31,6 +33,7 @@ abstract class AbstractClient implements ClientInterface
     public function setComicImage(string $image)
     {
         $this->image = $image;
+
         return $this;
     }
 
@@ -39,7 +42,7 @@ abstract class AbstractClient implements ClientInterface
         return $this->image;
     }
 
-    protected function _send(string $uri, array $payload) : bool
+    protected function _send(string $uri, array $payload): bool
     {
         $client = new Client();
 
@@ -49,6 +52,7 @@ abstract class AbstractClient implements ClientInterface
 
         try {
             $client->post($uri, ['json' => $payload]);
+
             return true;
         } catch (\Exception $e) {
             return false;
@@ -59,6 +63,7 @@ abstract class AbstractClient implements ClientInterface
     {
         $lockFile = new Lockfile();
         $lockFileIdentifier = sprintf('%s_%s', $this->getComicName(), sha1($uri));
+
         return $lockFile->isLocked($lockFileIdentifier, $this->getComicImage());
     }
 }

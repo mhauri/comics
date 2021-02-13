@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Comics\Comics;
@@ -28,7 +29,7 @@ class Xkcd implements ComicsInterface
         $xml = simplexml_load_string($feed);
         $imageHtml = (string) $xml->channel->item->description;
 
-        $exp = "/^.*?(https?\\:\\/\\/[^\\\" ]+)/";
+        $exp = '/^.*?(https?\\:\\/\\/[^\\" ]+)/';
         preg_match_all($exp, $imageHtml, $data);
 
         return $data[1][0];
@@ -38,6 +39,7 @@ class Xkcd implements ComicsInterface
     {
         $client = new Client();
         $result = $client->get(self::FEED_URL);
+
         return $result->getBody()->getContents();
     }
 }

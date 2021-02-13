@@ -1,11 +1,15 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Comics\Clients;
 
+/**
+ * Class Slack.
+ */
 class Slack extends AbstractClient
 {
-    public function send() : bool
+    public function send(): bool
     {
         $name = $this->getComicName();
         $image = $this->getComicImage();
@@ -22,12 +26,13 @@ class Slack extends AbstractClient
                 'icon_emoji' => $icon,
                 'attachments' => [[
                     'fallback' => $name,
-                    "image_url" => $image,
+                    'image_url' => $image,
                 ]],
             ];
 
             return $this->_send(getenv('SLACK_WEBHOOK_URL'), $payload);
         }
+
         return false;
     }
 }
