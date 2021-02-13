@@ -10,6 +10,14 @@ Currently the following Comics are integrated.
 - [xkcd](https://www.xkcd.com/)
 - [Dilbert](https://www.dilbert.com/)
 
+##### Installation
+    composer create-project  mhauri/comics-to-webhooks
+
+##### Configuration
+    cp .env.dist .env
+
+Configure your Slack / HipChat Webhook Url's in the **.env** file.
+
 
 ##### Cronjob settings example
     30 12 * * * php /path/to/your/comics send:comic garfield >> /dev/null 2>&1

@@ -1,6 +1,7 @@
 {
     "name": "mhauri/comics-to-webhooks",
     "description": "Comics to Webhooks like Slack and HipChat",
+    "license": "MIT",
     "authors": [
         {
             "name": "Marcel Hauri",
@@ -8,8 +9,8 @@
         }
     ],
     "require": {
-        "consolidation/robo": "^1.2",
-        "symfony/dotenv": "^3.4",
+        "consolidation/robo": "^1.2|^2.0",
+        "symfony/dotenv": "^3.4|^5.2",
         "guzzlehttp/guzzle": "^6.3",
         "ext-simplexml": "*"
     },
