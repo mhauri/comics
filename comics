@@ -11,7 +11,6 @@ try {
     $env->load(__DIR__.'/.env');
 } catch (\Exception $e) {
     echo $e->getMessage().PHP_EOL;
-    exit();
 }
 
 $commandClasses = [
