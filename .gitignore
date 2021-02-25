@@ -1,13 +1,7 @@
 .env
-vendor
-satis.json
-satis.log
-pub/include
-pub/index.html
-pub/packages.json
-queue/*
-!queue/.gitkeep
 .idea
+.phpunit.cache
 .php_cs.cache
-lock/*.lock
 composer.lock
+lock/*.lock
+vendor
