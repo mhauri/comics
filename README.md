@@ -1,3 +1,7 @@
+[![Build Status](https://img.shields.io/travis/com/mhauri/comics?style=flat-square)](https://travis-ci.com/mhauri/comics)
+[![Codacy Badge](https://img.shields.io/codacy/grade/c47c9b60b7814823acd8627dce23ba31?style=flat-square)](https://www.codacy.com/gh/mhauri/comics/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mhauri/comics&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://img.shields.io/codacy/coverage/c47c9b60b7814823acd8627dce23ba31?label=code%20coverage&style=flat-square)](https://www.codacy.com/gh/mhauri/comics/dashboard?utm_source=github.com&utm_medium=referral&utm_content=mhauri/comics&utm_campaign=Badge_Coverage)
+
 # Comics
 
 Comics is a simple [robo.li](https://robo.li/) script which pushes your daily dose of commics into your Microsoft Teams and/or Slack Channel.
