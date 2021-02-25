@@ -1,22 +1,29 @@
 {
-    "name": "mhauri/comics-to-webhooks",
-    "description": "Comics to Webhooks like Slack and HipChat",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Marcel Hauri",
-            "email": "marcel@hauri.me"
-        }
-    ],
-    "require": {
-        "consolidation/robo": "^1.2",
-        "symfony/dotenv": "^3.4",
-        "guzzlehttp/guzzle": "^6.3",
-        "ext-simplexml": "*"
-    },
-    "autoload":{
-        "psr-4":{
-            "Comics\\":"src"
-        }
+  "name": "mhauri/comics-to-webhooks",
+  "description": "Comics to Webhooks like Teams, Slack or HipChat",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcel Hauri",
+      "email": "marcel@hauri.dev"
     }
+  ],
+  "require": {
+    "consolidation/robo": "^3.0",
+    "symfony/dotenv": "^4.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-simplexml": "*",
+    "ext-libxml": "*",
+    "ext-json": "*",
+    "ext-dom": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Comics\\": "src",
+      "ComicTests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
 }
