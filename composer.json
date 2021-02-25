@@ -1,6 +1,6 @@
 {
   "name": "mhauri/comics-to-webhooks",
-  "description": "Comics to Webhooks like Teams, Slack or HipChat",
+  "description": "Comics to Webhooks like Microsoft Teams and Slack",
   "license": "MIT",
   "authors": [
     {

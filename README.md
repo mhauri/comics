@@ -1,8 +1,8 @@
 # Comics
 
-Comics is a simple [robo.li](https://robo.li/) script which pushes your daily dose of commics into your Slack Channel or HipChat Room.
+Comics is a simple [robo.li](https://robo.li/) script which pushes your daily dose of commics into your Microsoft Teams and/or Slack Channel.
 
-Currently the following Comics are integrated.
+The following Comics are currently integrated.
 
 - [Garfield](https://garfield.com/)
 - [CommitStrip](http://www.commitstrip.com/en/)
@@ -17,7 +17,7 @@ Currently the following Comics are integrated.
 ##### Configuration
     cp .env.dist .env
 
-Configure your Slack / HipChat Webhook Url's in the **.env** file.
+Configure your Microsoft Teams / Slack Webhook Url's in the **.env** file.
 
 
 ##### Cronjob settings example
